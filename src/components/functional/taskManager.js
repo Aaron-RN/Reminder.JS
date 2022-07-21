@@ -7,7 +7,8 @@ const TaskManager = () => {
   const [taskList, setTaskList] = useState([]);
   const [selectedTask, setSelectedTask] = useState([]);
 
-  const handleTaskSelect = () => {
+  const handleTaskSelect = (task) => {
+    setSelectedTask(task)
   }
 
   // Populate Task List
@@ -24,6 +25,9 @@ const TaskManager = () => {
   },[]);
   return (
     <div>
+      <section>
+        {selectedTask.name}
+      </section>
       <section>
         {populateTaskList()}
       </section>
